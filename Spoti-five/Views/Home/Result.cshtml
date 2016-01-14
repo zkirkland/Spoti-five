@@ -1,0 +1,41 @@
+﻿@{
+	ViewBag.Title = "Spoti-five";
+}
+@model Task2.Models.Search
+
+<div class="container-fluid">
+	<div class="jumbotron box-shadow--8dp col-xs-12" style="padding: 50px; ">
+		<div class="jumbotron-sm box-shadow--4dp" style="padding-left: 25px; padding-top: 10px; background-color: #">
+			<h1 style="color: #00ff90;	font-size: 76px;">
+				@ViewBag.Title
+			</h1>
+		</div>
+		<div style="max-height:15px">
+			<br />
+		</div>
+		<div class="jumbotron-sm box-shadow--4dp" style="padding: 15px; padding-bottom: 5px;">
+			<p style="text-align:center; font-size: 38px; color: #88CC88;" >@Model.Artist.Name</p>
+		</div>
+		<div style="max-height:15px">
+			<br />
+		</div>
+		<div class="jumbotron-sm col-md-6 box-shadow--4dp" style="min-width: 420px; margin-right: 20px;">
+			<!--List of albums goes here. -->
+			@for (int i = (Model.sortedList.Count - 1); i > (Model.sortedList.Count - 6); --i)
+			{
+				<div class="jumbotron-xsm box-shadow--4dp" style="background-color: #88CC88; color: #003333;" >
+					<text style="white-space:pre-line">"@Model.sortedList.ElementAt(i).Key.Name"</text>
+					<br />
+					<text>@Model.sortedList.ElementAt(i).Key.Tracks.Total Tracks</text><text> Popularity: @Model.sortedList.ElementAt(i).Key.Popularity</text>
+				</div>
+			}
+		</div>
+		<div class="jumbotron-sm col-xs-5  box-shadow--4dp" style="min-width: 370px;">
+			<!--Album Art goes here depending upon
+			the album selected. Default at first
+			album -->
+			<div style="text-align:center;"><img class="box-shadow--4dp" style="height:300px; width: 300px;" src="@Model.sortedList.ElementAt(0).Key.Images.First().Url" /></div>
+		</div>
+	</div>
+</div>
+<a href="~/Home/Contact" style="color: #333333">Contact Me!</a>

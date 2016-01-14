@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Contact Me!";
+}
+<h2 style="font-size:x-large; ">@ViewBag.Title</h2>
+<p style="font-size: medium">@ViewBag.Message</p>
+
+<form class="form-inline">
+	<div class="form-group">
+		<label for="firstname">Name</label>
+		<input type="text" class="form-control" id="firstname" placeholder="First">
+	</div>
+	<div class="form-group">
+		<label style="color:transparent" for="lastname">Last Name></label>
+		<input type="text" class="form-control" id="lastname" placeholder="Last">
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="inputEmail">Email Address</label>
+		<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+	</div>
+	<br />
+	<div class="form-group">
+		<label for="comments">Comments</label>
+		<br />
+		<textarea class="form-control" id="comments" rows="4" cols="69"></textarea>
+	</div>
+	<br /><br />
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>
