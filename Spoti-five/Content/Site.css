@@ -19,6 +19,14 @@ body {
 	padding-right: 15px;
 }
 
+a {
+	font-family: Arista2_0;
+}
+
+a:hover, a:visited {
+	text-decoration: none;
+}
+
 p {
 	font-family: Arista2_0;
 }

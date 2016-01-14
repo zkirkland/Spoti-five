@@ -49,7 +49,7 @@ namespace Task2.Controllers
 			if (artistResult.Artists.Items.Count > 0)
 			{
 				var artist = artistResult.Artists.Items[0];
-				var albums = spotify.GetArtistsAlbums(artist.Id, limit: 50);
+				var albums = spotify.GetArtistsAlbums(artist.Id, limit: 300);
 				for (int i = 0; i < albums.Items.Count; ++i)
 				{
 					albumID = albums.Items[i].Id;

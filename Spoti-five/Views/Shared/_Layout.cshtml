@@ -8,11 +8,28 @@
 	@Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body style="background-color:#808080">
+<body style="background-color:#808080;">
 	<div class="container">
-		@RenderBody()
-		<footer>
-			<p>&copy; @DateTime.Now.Year - Spoti-five, by Zachary D. Kirkland</p>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="jumbotron box-shadow--8dp clearfix" style="padding: 50px;">
+						<div class="jumbotron-sm box-shadow--4dp" style="padding-left: 25px; padding-top: 10px; padding-bottom: 10px;">
+							<a title="Back to Search" href="~/" style="color: #00ff90; font-size: 76px; padding-bottom:1px; text-shadow: 0px 4px 4px 2px rgba(0, 0, 0, .4);">
+								Spoti-five
+							</a>
+						</div>
+						<div style="max-height:15px">
+							<br />
+						</div>
+						@RenderBody()
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer style="font-family:Arial; padding-left:15px;">
+			<a href="~/Home/Contact" style="font-family:inherit; color: #333333">Contact Me!</a>
+			<p style="font-family:inherit;">&copy; @DateTime.Now.Year - Spoti-five, by Zachary D. Kirkland</p>
 		</footer>
 
 		@Scripts.Render("~/bundles/jquery")
