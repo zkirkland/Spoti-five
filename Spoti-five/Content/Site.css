@@ -29,6 +29,9 @@ a:hover, a:visited {
 
 p {
 	font-family: Arista2_0;
+	padding-top: 15px;
+	padding-left: 15px;
+	line-height: 0px;
 }
 
 h1 {
