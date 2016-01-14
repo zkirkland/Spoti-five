@@ -16,8 +16,6 @@ namespace Task2.Controllers
 
 		public ActionResult Contact()
 		{
-			ViewBag.Message = "For more information you can contact me using the form below.";
-
 			return View();
 		}
 
