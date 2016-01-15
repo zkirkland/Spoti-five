@@ -1,31 +1,30 @@
-﻿@{
-	ViewBag.Title = "Spoti-five";
-}
-@model Task2.Models.Search
+﻿@model Task2.Models.Search
 
 <div>
 	<div class="jumbotron-sm box-shadow--4dp" style="padding: 15px; padding-bottom: 5px; text-shadow: 0px 4px 4px 2px rgba(0, 0, 0, .4)">
-		<p style="text-align:center; font-size: 38px; color: #88CC88; padding-bottom: 15px;">@Model.Artist.Name</p>
+		<p style="text-align:center; font-size: 38px; color: #88CC88; padding-bottom: 15px; padding-left:0px;">@Model.Artist.Name</p>
 	</div>
 	<div style="max-height:15px">
 		<br />
 	</div>
-	<div class="jumbotron-sm col-md-6 box-shadow--4dp" style="margin-right: 20px;">
-		<!--List of albums goes here. -->
-		@{ int i = Model.sortedList.Count - 1; int count = 0;}
-		@while (i >= 0 && count < 5)
-		{
-			<div class="jumbotron-xsm box-shadow--4dp" style="background-color: #88CC88; color: #003333;">
-				<text style="white-space:pre-line;">"@Model.sortedList.ElementAt(i).Key.Name"</text>
-				<br />
-				<text>@Model.sortedList.ElementAt(i).Key.Tracks.Total Tracks</text>
-			</div>
-			--i;
-			++count;
-		}
-	</div>
-	<div class="jumbotron-sm col-md-5 box-shadow--4dp" style="min-width: 370px;">
-		<!--Album Art goes here. Default at first album -->
-		<div style="text-align:center;"><img class="box-shadow--4dp" style="height:300px; width: 300px;" src="@Model.sortedList.ElementAt(Model.sortedList.Count - 1).Key.Images.First().Url" /></div>
+	<div>
+		<div class="jumbotron-sm box-shadow--4dp pull-left" style="margin-right: 20px; width: 625px;">
+			<!--List of albums goes here. -->
+			@{ int i = Model.sortedList.Count - 1; int count = 0;}
+			@while (i >= 0 && count < 5)
+			{
+				<div class="jumbotron-xsm box-shadow--4dp" style="background-color: #88CC88; color: #003333;">
+					<text style="white-space:pre-line;">"@Model.sortedList.ElementAt(i).Key.Name"</text>
+					<br />
+					<text>@Model.sortedList.ElementAt(i).Key.Tracks.Total Tracks &nbsp; Released @Model.sortedList.ElementAt(i).Key.ReleaseDate</text>
+				</div>
+				--i;
+				++count;
+			}
+		</div>
+		<div class="jumbotron-sm box-shadow--4dp pull-right" style="max-width: 360px;">
+			<!--Album Art goes here. Default at first album -->
+			<div style="text-align:center;"><img class="box-shadow--4dp" style="height:300px; width: 300px; align-self:flex-end" src="@Model.sortedList.ElementAt(Model.sortedList.Count - 1).Key.Images.First().Url" /></div>
+		</div>
 	</div>
 </div>

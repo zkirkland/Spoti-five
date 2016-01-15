@@ -75,11 +75,12 @@ namespace Task2.Controllers
 					if(result.sortedList.Count > 0)
 					{
 						// check to see if the album is already in the list
-						// if it is in the list, set bool to true
 						for (int j = 0; j < result.sortedList.Count; ++j)
 						{
+							// if it IS in the list
 							if (albumResult.Name == result.sortedList.ElementAt(j).Key.Name)
 							{
+								// set to true
 								albumInList = true;
 							}
 						}
@@ -88,6 +89,8 @@ namespace Task2.Controllers
 						// we can decide if we need to add the album
 						if (albumInList != true)
 						{
+							// The code above was not perfect and this helps
+							// double check that the album object is not already in the list
 							if (result.sortedList.ContainsKey(albumResult) != true)
 							{
 								result.sortedList.Add(albumResult, albumResult.Popularity);
