@@ -10,18 +10,21 @@
 	<div style="max-height:15px">
 		<br />
 	</div>
-	<div class="jumbotron-sm col-md-6 box-shadow--4dp" style="min-width: 420px; margin-right: 20px;">
+	<div class="jumbotron-sm col-md-6 box-shadow--4dp" style="margin-right: 20px;">
 		<!--List of albums goes here. -->
-		@for (int i = (Model.sortedList.Count - 1); i > (Model.sortedList.Count - 6); --i)
-			{
+		@{ int i = Model.sortedList.Count - 1; int count = 0;}
+		@while (i >= 0 && count < 5)
+		{
 			<div class="jumbotron-xsm box-shadow--4dp" style="background-color: #88CC88; color: #003333;">
 				<text style="white-space:pre-line;">"@Model.sortedList.ElementAt(i).Key.Name"</text>
 				<br />
 				<text>@Model.sortedList.ElementAt(i).Key.Tracks.Total Tracks</text>
 			</div>
-			}
+			--i;
+			++count;
+		}
 	</div>
-	<div class="jumbotron-sm col-xs-5  box-shadow--4dp" style="min-width: 370px;">
+	<div class="jumbotron-sm col-md-5 box-shadow--4dp" style="min-width: 370px;">
 		<!--Album Art goes here. Default at first album -->
 		<div style="text-align:center;"><img class="box-shadow--4dp" style="height:300px; width: 300px;" src="@Model.sortedList.ElementAt(Model.sortedList.Count - 1).Key.Images.First().Url" /></div>
 	</div>
